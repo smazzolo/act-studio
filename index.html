@@ -54,13 +54,13 @@ body{font-family:'Inter',sans-serif;color:#3a4a57;background:#f4f6f8;-webkit-fon
   background:linear-gradient(200deg,rgba(10,75,110,.5) 0%,rgba(2,67,97,0) 60%);
   clip-path:polygon(55% 0,100% 0,100% 80%);pointer-events:none}
 .cv-wm{position:absolute;left:-3%;bottom:-4%;width:60%;height:70%;background-size:contain;background-repeat:no-repeat;background-position:left bottom;opacity:.08}
-.cv-wrap{position:relative}
+.cv-wrap{position:static}
 .cv-kicker{font-size:14px;letter-spacing:.34em;font-weight:600;color:#9fc0d6}
 .cv-title{font-family:'Garamond';font-size:88px;line-height:1.0;margin-top:22px;color:#eaf2f7}
 .cv-title .bold{font-weight:600;color:#fff} .cv-title .reg{font-weight:400}
 .cv-rule{width:90px;height:3px;background:#7fa9c4;margin:30px 0}
 .cv-sub{font-family:'Garamond';font-size:20px;line-height:1.55;color:#cfe0ea}
-.cv-logo{position:absolute;right:0;top:0;height:54px}
+.cv-logo{position:absolute;right:48px;top:48px;height:42px}
 
 /* photo hero */
 .photohero{background-size:cover;background-position:center;color:#fff}
@@ -200,7 +200,7 @@ body{font-family:'Inter',sans-serif;color:#3a4a57;background:#f4f6f8;-webkit-fon
 .phil p{font-family:'Garamond';font-size:16px;line-height:1.55;color:#3a4a57;max-width:560px}
 /* aree di attività — card glass a 2 colonne (LIQ 2) */
 .grid2{column-count:2;column-gap:24px;margin-top:38px}
-.grid2-cont{margin-top:0}
+.grid2-pgbrk{display:none}
 .area{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 18px;padding:18px 20px}
 .area h4{font-family:'Garamond';font-weight:600;font-size:19px;color:#024361;margin-bottom:8px;
   padding-left:11px;border-left:3px solid #024361;line-height:1.2;position:relative}
@@ -211,7 +211,6 @@ body{font-family:'Inter',sans-serif;color:#3a4a57;background:#f4f6f8;-webkit-fon
 /* team — card glass (LIQ 2) + profilo Teofili esteso */
 .team .m.glassl{padding:22px 24px;height:100%}
 .team .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:34px 40px;align-items:stretch}
-.team-note{font-family:'Inter';font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8aa0b0;margin-top:14px}
 /* contatti — card in vetro (LIQ 2 p.12) */
 .cc{background:linear-gradient(150deg,rgba(2,67,97,.055),rgba(2,67,97,.015));border:1px solid rgba(2,67,97,.12);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 8px 22px rgba(2,67,97,.07);position:relative;overflow:hidden}
@@ -279,7 +278,7 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   /* aree: griglia vera a 2 colonne (il multicol frammenta male in stampa) */
   .grid2{columns:2;column-gap:16px;margin-top:26px}
   .area{margin:0 0 16px;padding:22px 24px;width:100%;break-inside:avoid;-webkit-column-break-inside:avoid}
-  .grid2-cont{break-before:page;margin-top:0;padding-top:28px}
+  .grid2-pgbrk{display:block;column-span:all;break-before:page;height:28px}
   .area h4{font-size:18px;margin-bottom:10px}
   .area p,.area li{font-size:14px;line-height:1.55}
   .ar-close{margin-top:70px;font-size:19px;line-height:1.65;padding-left:28px}
@@ -303,7 +302,6 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .team .grid{gap:10px 16px}
   .grp{margin-top:14px}
   .glabel{padding-bottom:7px;font-size:11px}
-  .team-note{margin-top:8px}
   .team .h2{font-size:34px}
   .team .rule{margin:16px 0 4px}
   .mailrow{padding-top:6px}
@@ -312,7 +310,7 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .h2{font-size:40px}
   .lead{font-size:20px}
   .cv-title{font-size:88px}
-  .cv-logo{height:54px}
+  .cv-logo{height:42px}
   .cc-grid,.nm-grid{grid-template-columns:1fr 1fr}
   .stats{gap:56px}
   .mini-idx{padding:8px 22px}
@@ -398,8 +396,7 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
           <div class="area glassl"><h4>Fiscalità Internazionale e Tax Planning</h4><p>Assistiamo i Clienti nelle tematiche di diritto tributario internazionale con riferimento alle imposte dirette, all'IVA e alle altre imposte indirette. Lo Studio analizza le operazioni infragruppo nel rispetto dei principi di transfer pricing, curando la predisposizione della documentazione idonea, inclusi Master File e Documentazione Nazionale, in conformità alla normativa e alla prassi applicabile.</p></div>
           <div class="area glassl"><h4>Tax Ruling e Pareristica</h4><p>Supportiamo la clientela nella predisposizione di istanze di interpello ordinario e di interpelli finalizzati alla disapplicazione di specifiche normative antielusive. L'assistenza copre tutte le fasi del procedimento, comprese le interlocuzioni con l'Agenzia delle Entrate.</p></div>
           <div class="area glassl"><h4>Fiscalità Immobiliare</h4><p>Forniamo consulenza su tutti i profili fiscali delle operazioni che coinvolgono portafogli immobiliari. ACT Studio affianca i Clienti nella strutturazione di operazioni di acquisto, dismissione e gestione di portafogli immobiliari commerciali, residenziali e industriali.</p></div>
-        </div>
-        <div class="grid2 grid2-cont">
+          <div class="grid2-pgbrk" aria-hidden="true"></div>
           <div class="area glassl"><h4>Precontenzioso e Contenzioso Tributario</h4><p>ACT Studio vanta una consolidata esperienza nell'assistenza e nella rappresentanza dei Clienti nel contenzioso tributario innanzi alle Corti di Giustizia Tributaria. Lo Studio opera inoltre nella fase precontenziosa, fornendo supporto nei rapporti con l'Amministrazione finanziaria, nella predisposizione di istanze in autotutela, accertamenti con adesione e accordi stragiudiziali, nonché nell'accesso ai benefici previsti dal regime del Patent Box.</p></div>
           <div class="area glassl"><h4>Consulenza Societaria</h4><p>Forniamo assistenza in ambito contrattuale e societario, occupandoci della predisposizione e revisione di patti di sindacato, statuti e atti costitutivi. Lo Studio offre inoltre consulenza nelle operazioni di ristrutturazione aziendale, nella gestione della crisi d'impresa e nei processi di risanamento e riorganizzazione del business.</p></div>
           <div class="area glassl"><h4>Fiscalità dell'Energia</h4><p>Offriamo consulenza specialistica in materia di fiscalità dell'energia, con riferimento ai settori dell'energia elettrica, del gas, del petrolio e delle fonti energetiche rinnovabili, curando tutti i relativi profili tributari e regolatori.</p></div>
@@ -419,7 +416,6 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
             <div class="wrap">
         <div class="eyebrow">04 — IL NOSTRO TEAM</div>
         <h2 class="h2">I professionisti dello Studio.</h2><div class="rule"></div>
-        <p class="team-note">Ritratti professionali in arrivo · iniziali provvisorie</p>
         <div class="grp"><div class="glabel">PARTNERS</div><div class="grid">
           <div class="m glassl"><div class="av">MT</div><div class="mb">
       <div class="mn">Dott. Marco Triolo</div><div class="mr">Partner</div><p class="mbio">Dottore commercialista e revisore legale. Diritto tributario e societario, contenzioso, fiscalità internazionale e d'impresa, riorganizzazioni di gruppi, operazioni straordinarie e due diligence.</p><span class="mailrow"><a class="mail" href="mailto:mtriolo@actstudio.it">mtriolo@actstudio.it</a><a class="ico" href="mailto:mtriolo@actstudio.it" aria-label="Scrivi una mail"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a><button class="ico copybtn" data-mail="mtriolo@actstudio.it" aria-label="Copia indirizzo"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="1.6"/><path d="M6.5 15H5.2A1.7 1.7 0 0 1 3.5 13.3V5.2A1.7 1.7 0 0 1 5.2 3.5h8.1A1.7 1.7 0 0 1 15 5.2v1.3"/></svg></button></span></div></div>
