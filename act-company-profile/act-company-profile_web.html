@@ -1,0 +1,497 @@
+<!DOCTYPE html><html lang="it"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACT Studio — Company Profile</title>
+<meta name="description" content="Company Profile di ACT Studio — consulenza tributaria e societaria a Roma.">
+<style>
+@font-face{font-family:'Garamond';src:url('assets/fonts/font-01-7c99d2a4.ttf');font-weight:400}
+@font-face{font-family:'Garamond';src:url('assets/fonts/font-02-1b4c00e1.ttf');font-weight:500}
+@font-face{font-family:'Garamond';src:url('assets/fonts/font-03-e2106149.ttf');font-weight:600}
+@font-face{font-family:'Garamond';src:url('assets/fonts/font-04-36b20f08.ttf');font-weight:500;font-style:italic}
+@font-face{font-family:'Inter';src:url('assets/fonts/font-05-a57f6e35.ttf');font-weight:400}
+@font-face{font-family:'Inter';src:url('assets/fonts/font-06-6dd23c04.ttf');font-weight:500}
+@font-face{font-family:'Inter';src:url('assets/fonts/font-07-c44ed5a8.ttf');font-weight:600}
+@font-face{font-family:'Inter';src:url('assets/fonts/font-08-53cb4a09.ttf');font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#3a4a57;background:#f4f6f8;-webkit-font-smoothing:antialiased}
+.sec{position:relative;overflow:hidden;background:#fff}
+.sec.light .wrap{position:relative;z-index:1}
+.wrap{max-width:920px;margin:0 auto;padding:88px 48px}
+.sec.light .wrap{padding-bottom:120px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(12px);
+     border-bottom:.5px solid #e3e8ec}
+.nav-in{max-width:920px;margin:0 auto;display:flex;align-items:center;gap:24px;padding:14px 48px}
+.nav img{height:26px}
+.nav-links{margin-left:auto;display:flex;gap:26px}
+.nav-links a{font-size:13px;color:#3a4a57;text-decoration:none;letter-spacing:.01em}
+.nav-links a:hover{color:#024361}
+
+.eyebrow{font-size:11px;letter-spacing:.3em;font-weight:600;color:#024361}
+.eyebrow.light{color:#a9c4d6}
+.h2{font-family:'Garamond';font-weight:600;color:#024361;font-size:40px;line-height:1.08;margin-top:18px}
+.h2.onwhite{color:#fff}
+.rule{width:64px;height:3px;background:#024361;margin:22px 0 26px}
+.rule.light{background:#8fb6cf}
+.lead{font-family:'Garamond';font-size:20px;line-height:1.5;color:#0e2233;max-width:680px}
+.lead.onwhite{color:#dfeaf1} .lead.narrow{max-width:620px}
+.para{font-size:15px;line-height:1.65;color:#3a4a57;max-width:680px;margin-top:20px}
+
+.index{margin-top:44px}
+.ix{display:flex;align-items:center;gap:28px;padding:15px 0;border-top:1px solid #e3e8ec}
+.ix:last-child{border-bottom:1px solid #e3e8ec}
+.ixn{font-size:14px;font-weight:700;color:#024361;min-width:30px}
+.ixt{font-family:'Garamond';font-size:20px;color:#0e2233}
+.hero-band{height:300px;background-size:cover;background-position:center;border-top-left-radius:200px 100px}
+
+/* cover */
+.cover{background:linear-gradient(150deg,#011c2a 0%,#024361 58%,#0a4b6e 100%);color:#fff;min-height:88vh;display:flex;align-items:center}
+.cv-fold{position:absolute;top:0;right:0;width:62%;height:46%;
+  background:linear-gradient(135deg,rgba(255,255,255,.05) 0%,rgba(255,255,255,0) 42%),linear-gradient(218deg,rgba(1,28,42,.55) 0%,rgba(1,28,42,0) 55%);
+  clip-path:polygon(38% 0,100% 0,100% 100%);pointer-events:none}
+.cv-fold2{position:absolute;top:0;right:0;width:46%;height:60%;
+  background:linear-gradient(200deg,rgba(10,75,110,.5) 0%,rgba(2,67,97,0) 60%);
+  clip-path:polygon(55% 0,100% 0,100% 80%);pointer-events:none}
+.cv-wm{position:absolute;left:-3%;bottom:-4%;width:60%;height:70%;background-size:contain;background-repeat:no-repeat;background-position:left bottom;opacity:.08}
+.cv-wrap{position:static}
+.cv-kicker{font-size:14px;letter-spacing:.34em;font-weight:600;color:#9fc0d6}
+.cv-title{font-family:'Garamond';font-size:88px;line-height:1.0;margin-top:22px;color:#eaf2f7}
+.cv-title .bold{font-weight:600;color:#fff} .cv-title .reg{font-weight:400}
+.cv-rule{width:90px;height:3px;background:#7fa9c4;margin:30px 0}
+.cv-sub{font-family:'Garamond';font-size:20px;line-height:1.55;color:#cfe0ea}
+.cv-logo{position:absolute;right:48px;top:48px;height:42px}
+
+/* photo hero */
+.photohero{background-size:cover;background-position:center;color:#fff}
+.photohero .wrap{padding-top:120px;padding-bottom:120px}
+.photohero.tall .wrap{padding-bottom:96px}
+.stats{display:flex;gap:56px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.22);padding-top:26px;margin-top:48px}
+.st-n{font-family:'Garamond';font-size:44px;color:#fff;line-height:1}
+.st-n.big{font-size:34px;letter-spacing:.04em}
+.st-l{font-size:11px;letter-spacing:.16em;color:#a9c4d6;margin-top:8px;max-width:160px}
+
+/* principi */
+.pr-list{display:flex;flex-direction:column;gap:54px}
+.pr{display:flex;gap:42px;align-items:flex-start}
+.pr-photo{width:170px;height:170px;border-radius:50%;background-size:cover;background-position:center;flex:none}
+.pr-num{font-family:'Garamond';font-size:28px;color:#b9cdd9}
+.pr-title{font-family:'Garamond';font-weight:600;font-size:26px;color:#024361;margin-top:4px}
+.pr-body{font-size:15px;line-height:1.6;color:#3a4a57;max-width:520px;margin-top:12px}
+
+/* aree */
+.ar-list{display:flex;flex-direction:column;gap:26px;margin-top:30px}
+.ar{display:flex;gap:28px;padding-bottom:26px;border-bottom:1px solid #e3e8ec}
+.ar:last-child{border-bottom:none}
+.ar-n{font-family:'Garamond';font-size:20px;color:#024361;font-weight:600;min-width:34px}
+.ar-t{font-family:'Garamond';font-weight:600;font-size:21px;color:#0e2233}
+.ar-d{font-size:14.5px;line-height:1.58;color:#3a4a57;margin-top:8px}
+.ar-close{font-family:'Garamond';font-size:18px;line-height:1.5;color:#024361;border-left:3px solid #024361;padding-left:24px;margin-top:34px;max-width:660px}
+
+/* normativa */
+.deep{background:linear-gradient(135deg,#011c2a 0%,#024361 60%,#0a4b6e 100%);color:#fff}
+.nm-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 44px;margin-top:40px}
+.nm{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
+.nm-t{font-family:'Garamond';font-weight:600;font-size:18px;color:#fff}
+.nm-ref{font-size:11px;letter-spacing:.04em;color:#8fb6cf;font-weight:600}
+.nm-d{font-size:13.5px;line-height:1.55;color:#c4d6e2;margin-top:8px}
+
+/* team */
+.grp{margin-top:40px}
+.glabel{font-size:12px;letter-spacing:.26em;font-weight:600;color:#024361;padding-bottom:12px;border-bottom:1px solid #e3e8ec}
+.grid{display:grid;gap:34px 40px;margin-top:28px}
+.g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:1fr 1fr 1fr}
+.m{display:flex;gap:20px;align-items:flex-start}
+.av{width:58px;height:58px;border-radius:50%;border:1.5px solid #b9cdd9;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Garamond';font-size:18px;color:#024361;letter-spacing:.04em}
+.mn{font-family:'Garamond';font-weight:600;font-size:19px;color:#0e2233;line-height:1.15}
+.mr{font-size:11px;letter-spacing:.16em;font-weight:600;color:#024361;margin-top:7px;text-transform:uppercase}
+.mbio{font-size:13.5px;line-height:1.5;color:#3a4a57;margin-top:12px}
+.mb{min-width:0;flex:1;display:flex;flex-direction:column}
+.mbio,.mn,.mr,.mail{overflow-wrap:anywhere;word-break:break-word}
+.mailrow{margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;white-space:normal;line-height:1}
+.mail{font-size:13.5px;color:#3a4a57;text-decoration:none;vertical-align:middle}
+.mail:hover{color:#024361}
+.ico{display:inline-block;margin-left:10px;border:none;background:none;cursor:pointer;padding:0;vertical-align:middle;line-height:0}
+.ico svg{width:15px;height:15px;vertical-align:middle}
+.copybtn.copied svg{stroke:#1f9d55}
+
+/* pubblicazioni */
+.pb-list{margin-top:40px;border-top:2px solid #024361}
+.pb{display:flex;align-items:baseline;gap:32px;padding:20px 0;border-bottom:1px solid #e3e8ec}
+.pb-d{font-size:13px;font-weight:700;letter-spacing:.04em;color:#024361;min-width:120px}
+.pb-t{font-family:'Garamond';font-size:19px;color:#0e2233;flex:1}
+.pb-s{font-size:10.5px;letter-spacing:.14em;color:#8aa0b0}
+
+/* contatti */
+.cc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.cc{background:#f7f9fb;border:1px solid #e3e8ec;border-radius:14px;padding:34px}
+.cc-l{font-size:12px;letter-spacing:.2em;font-weight:600;color:#024361}
+.cc-line{font-family:'Garamond';font-size:22px;color:#0e2233;margin-top:12px}
+.cc-link{display:inline-block;font-size:13.5px;font-weight:600;color:#024361;text-decoration:none;margin-top:18px}
+.cc-link:hover{text-decoration:underline}
+.map{display:block;max-width:824px;height:270px;margin:0 auto 88px;background-size:cover;background-repeat:no-repeat;background-position:center;background-color:#011c2a;border-radius:14px;overflow:hidden;position:relative;text-decoration:none;box-shadow:0 8px 22px rgba(2,67,97,.10)}
+.map-tag{position:absolute;left:24px;bottom:22px;background:#024361;color:#fff;border-radius:40px;padding:12px 22px;display:flex;align-items:center;gap:8px;font-size:14px}
+.map-tag svg{width:16px;height:16px}
+
+/* back */
+.back{background:linear-gradient(160deg,#024361 0%,#011c2a 100%);min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 0;color:#fff}
+.bk-center{text-align:center}
+.bk-logo{height:70px}
+.bk-rule{width:64px;height:2px;background:#7fa9c4;margin:28px auto}
+.bk-tag{font-size:12px;letter-spacing:.3em;color:#9fc0d6}
+.bk-foot{margin-top:48px;text-align:center;font-size:13.5px;line-height:1.9;color:#bcd2e0}
+.bk-foot a{color:#cfe0ea}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:#024361;color:#fff;
+        padding:10px 20px;border-radius:30px;font-size:13.5px;display:flex;align-items:center;gap:8px;opacity:0;
+        pointer-events:none;transition:.25s;z-index:100}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast svg{width:15px;height:15px}
+
+/* responsive */
+@media(max-width:760px){
+  .wrap{padding:60px 24px} .sec.light .wrap{padding-bottom:80px}
+  .cv-title{font-size:56px} .cv-logo{height:38px} .cover{min-height:80vh}
+  .h2{font-size:30px} .lead{font-size:17px}
+  .g2,.g3,.cc-grid,.nm-grid{grid-template-columns:1fr}
+  .pr{flex-direction:column;gap:18px} .pr-photo{width:120px;height:120px}
+  .stats{gap:28px} .nav-links{display:none}
+  .map{height:210px;margin:0 24px 60px}
+  .map-pin{top:43.6%;width:26px;height:26px} .map-pin svg{width:26px;height:26px} .map-tag{left:16px;bottom:16px;font-size:12px}
+}
+
+/* ===== innesti LIQ 2 (liquid glass, adattato) ===== */
+.glassl{background:linear-gradient(150deg,rgba(2,67,97,.055),rgba(2,67,97,.015));border:1px solid rgba(2,67,97,.12);
+  border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 8px 22px rgba(2,67,97,.07);
+  -webkit-backdrop-filter:blur(8px) saturate(115%);backdrop-filter:blur(8px) saturate(115%);position:relative;overflow:hidden}
+.glassl::before{content:"";position:absolute;left:0;top:0;right:45%;height:42%;
+  background:linear-gradient(135deg,rgba(255,255,255,.5),transparent 78%);pointer-events:none}
+/* placeholder foto reale in attesa */
+.ph{position:relative;overflow:hidden;border-radius:14px;
+  background:radial-gradient(70% 60% at 18% 12%,rgba(22,116,158,.55),transparent 62%),
+             radial-gradient(60% 55% at 88% 86%,rgba(6,72,108,.62),transparent 60%),
+             linear-gradient(135deg,#011c2a 0%,#024361 58%,#0a4b6e 100%)}
+.ph::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.34);font-family:'Inter';font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-align:center;padding:0 12px}
+.hero-ph{height:300px;margin-bottom:44px}
+.real-wait{position:absolute;right:14px;bottom:12px;z-index:1;display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:99px;
+  padding:5px 12px;font-family:'Inter';font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.92)}
+.real-wait::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;opacity:.8}
+/* mini-indice glass */
+.mini-idx{margin-top:44px;padding:8px 22px}
+.mini-idx .mi{display:flex;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid rgba(2,67,97,.10);
+  position:relative;text-decoration:none;transition:padding-left .25s ease}
+.mini-idx .mi:hover{padding-left:8px}
+.mini-idx .mi:last-child{border-bottom:none}
+.mini-idx .mi .n{font-family:'Inter';font-size:12px;font-weight:700;color:#024361;width:26px}
+.mini-idx .mi .t{flex:1;font-family:'Inter';font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0e2233}
+.mini-idx .mi .go{font-family:'Inter';font-size:13px;font-weight:700;color:#8aa0b0}
+/* filosofia — 6 principi, layout LIQ 2 */
+.phil{display:flex;flex-direction:column;gap:36px}
+.phil-row{display:flex;gap:28px;align-items:center}
+.phil-ph{position:relative;width:170px;height:120px;border-radius:12px;overflow:hidden;flex:none;
+  box-shadow:0 6px 18px rgba(2,67,97,.16)}
+.phil-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.phil-ph::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(125deg,rgba(255,255,255,.28),transparent 42%),linear-gradient(0deg,rgba(1,28,42,.32),transparent 55%);pointer-events:none}
+.phil h3{font-family:'Garamond';font-weight:600;font-size:23px;color:#024361;margin-bottom:6px}
+.phil p{font-family:'Garamond';font-size:16px;line-height:1.55;color:#3a4a57;max-width:560px}
+/* aree di attività — card glass a 2 colonne (LIQ 2) */
+.grid2{column-count:2;column-gap:24px;margin-top:38px}
+.grid2-pgbrk{display:none}
+.area{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 18px;padding:18px 20px}
+.area h4{font-family:'Garamond';font-weight:600;font-size:19px;color:#024361;margin-bottom:8px;
+  padding-left:11px;border-left:3px solid #024361;line-height:1.2;position:relative}
+.area p{font-family:'Garamond';font-size:14.5px;color:#3a4750;line-height:1.5;position:relative;margin-bottom:7px}
+.area p:last-child{margin-bottom:0}
+.area ul{margin:7px 0 8px 20px;padding:0;position:relative}
+.area li{font-family:'Garamond';font-size:14.5px;color:#3a4750;line-height:1.45;margin-bottom:3px}
+/* team — card glass (LIQ 2) + profilo Teofili esteso */
+.team .m.glassl{padding:22px 24px;height:100%}
+.team .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:34px 40px;align-items:stretch}
+/* contatti — card in vetro (LIQ 2 p.12) */
+.cc{background:linear-gradient(150deg,rgba(2,67,97,.055),rgba(2,67,97,.015));border:1px solid rgba(2,67,97,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 8px 22px rgba(2,67,97,.07);position:relative;overflow:hidden}
+.cc::before{content:"";position:absolute;left:0;top:0;right:50%;height:46%;
+  background:linear-gradient(135deg,rgba(255,255,255,.55),transparent 78%);pointer-events:none}
+.cc>*{position:relative}
+.cc-line a{color:inherit;text-decoration:none}
+/* corpi di testo editoriali in Garamond (Inter solo micro-etichette) */
+.para{font-family:'Garamond';font-size:16.5px}
+.nm-d{font-family:'Garamond';font-size:15px}
+.mbio{font-family:'Garamond';font-size:15px;line-height:1.5}
+.bk-foot{font-family:'Garamond';font-size:15px}
+@media(max-width:760px){
+  .grid2{column-count:1}
+  .phil-row{flex-direction:column;align-items:flex-start}
+  .mini-idx{padding:4px 14px}
+}
+
+/* pin ACT in overlay sulla mappa (vettoriale, animato) */
+.map-pin{position:absolute;left:48.6%;top:39.3%;transform:translate(-50%,-100%);
+  width:34px;height:34px;z-index:2;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(1,28,42,.45))}
+.map-pin svg{position:relative;width:34px;height:34px;display:block}
+.map-pin-pulse{position:absolute;left:50%;bottom:2px;width:16px;height:16px;
+  transform:translateX(-50%);border-radius:50%;background:rgba(2,67,97,.45);
+  animation:pinpulse 2s ease-out infinite}
+@keyframes pinpulse{
+  0%{transform:translateX(-50%) scale(.6);opacity:.7}
+  70%{transform:translateX(-50%) scale(2.4);opacity:0}
+  100%{opacity:0}
+}
+@media(prefers-reduced-motion:reduce){.map-pin-pulse{animation:none}}
+
+/* ===== stampa / export PDF ===== */
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:A4;margin:0}
+@media print{
+  body{background:#fff}
+  .nav,.toast,.map-pin-pulse{display:none!important}
+  .sec{break-before:page}
+  .sec.cover{break-before:auto;height:297mm;min-height:0}
+  .back{height:297mm;min-height:0}
+  .m,.area,.phil-row,.pr,.pb,.cc,.nm,.mi,.grp,.st{break-inside:avoid}
+  h2,h3,.h2,.eyebrow,.rule,.glabel,.ixt{break-after:avoid}
+  .glassl,.mini-idx,.cc{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  .glassl,.mini-idx,.cc,.m,.phil-ph,.map{box-shadow:none!important}
+  .glassl::before,.cc::before{content:none!important;border:0!important;background:none!important}
+  .glassl,.cc{background:#f5f8fa!important}
+  a{text-decoration:none}
+  /* compattazione per far respirare le pagine A4 */
+  .wrap{padding:56px 48px}
+  .sec.light .wrap{padding-bottom:56px}
+  /* hero di sezione a pagina piena */
+  .photohero{height:297mm;min-height:0;display:flex;flex-direction:column;justify-content:center}
+  /* chi siamo in una pagina */
+  .hero-ph{height:200px;margin-bottom:30px}
+  .para{margin-top:14px}
+  .mini-idx{margin-top:28px}
+  .mini-idx .mi{padding:10px 0}
+  /* filosofia: una pagina piena, contenuto centrato */
+  .sec:has(> .wrap > .phil){height:297mm;display:flex;flex-direction:column;justify-content:center}
+  .phil{gap:26px}
+  .phil-ph{width:150px;height:104px}
+  .phil h3{font-size:22px;margin-bottom:4px}
+  .phil p{font-size:14.5px;line-height:1.5}
+  /* aree: griglia vera a 2 colonne (il multicol frammenta male in stampa) */
+  .grid2{columns:2;column-gap:16px;margin-top:26px}
+  .area{margin:0 0 16px;padding:22px 24px;width:100%;break-inside:avoid;-webkit-column-break-inside:avoid}
+  .grid2-pgbrk{display:block;column-span:all;break-before:page;height:28px}
+  .area h4{font-size:18px;margin-bottom:10px}
+  .area p,.area li{font-size:14px;line-height:1.55}
+  .ar-close{margin-top:70px;font-size:19px;line-height:1.65;padding-left:28px}
+  /* pubblicazioni: pagina piena, contenuto centrato */
+  #pubblicazioni{height:297mm;display:flex;flex-direction:column;justify-content:center}
+  .pb{padding:24px 0}
+  /* normativa avanzata: pagina navy piena, card compatte */
+  .sec.deep{height:297mm;min-height:0}
+  .nm-grid{margin-top:24px;gap:14px 18px}
+  .nm{padding:14px 16px}
+  .nm-d{font-size:13px}
+  /* team: gruppi indivisibili, card compatte (obiettivo: una pagina) */
+  .team .m.glassl{padding:11px 14px}
+  .team .m{gap:14px}
+  .team .av{width:46px;height:46px;font-size:15px}
+  .mbio{font-size:12.5px;margin-top:6px;line-height:1.42}
+  .mn{font-size:16px}
+  .mr{margin-top:4px;font-size:10px}
+  .mail{font-size:12px}
+  .team .ico svg{width:13px;height:13px}
+  .team .grid{gap:10px 16px}
+  .grp{margin-top:14px}
+  .glabel{padding-bottom:7px;font-size:11px}
+  .team .h2{font-size:34px}
+  .team .rule{margin:16px 0 4px}
+  .mailrow{padding-top:6px}
+  /* neutralizzo la media query mobile (in stampa Chrome valuta ~756px) */
+  .phil-row{flex-direction:row;align-items:center}
+  .h2{font-size:40px}
+  .lead{font-size:20px}
+  .cv-title{font-size:88px}
+  .cv-logo{height:42px}
+  .cc-grid,.nm-grid{grid-template-columns:1fr 1fr}
+  .stats{gap:56px}
+  .mini-idx{padding:8px 22px}
+  .map{width:calc(100% - 96px);max-width:698px;height:270px;margin:0 auto 56px;background-size:cover;break-inside:avoid}
+  .map-pin{left:48.6%;top:39.3%;width:34px;height:34px}
+  .map-pin svg{width:34px;height:34px}
+}
+</style></head><body>
+<nav class="nav"><div class="nav-in">
+  <a href="#top"><img src="assets/img/img-01-420635e7.png" alt="ACT Studio"/></a>
+  <div class="nav-links">
+    <a href="#chi-siamo">Chi siamo</a><a href="#filosofia">Filosofia</a><a href="#skills">Skills</a>
+    <a href="#team">Team</a><a href="#pubblicazioni">Pubblicazioni</a><a href="#contatti">Contatti</a>
+  </div></div></nav>
+<section class="sec cover" id="top">
+      <div class="cv-fold"></div>
+      <div class="cv-fold2"></div>
+      <div class="cv-wm" style="background-image:url('assets/img/img-02-c639bc23.png')"></div>
+      <div class="wrap cv-wrap">
+        
+        <h1 class="cv-title"><span class="reg">Company</span><br><span class="bold">Profile</span></h1>
+        <div class="cv-rule"></div>
+        <p class="cv-sub">Consulenza tributaria e societaria a Roma.<br>Esperienza, metodo e visione di lungo periodo.</p>
+        <img class="cv-logo" src="assets/img/img-03-f7121be0.png" alt="ACT Studio"/>
+      </div>
+    </section>
+<section class="sec light" id="chi-siamo">
+      <div class="wrap">
+        <div class="ph hero-ph" data-label="Ambienti studio"><span class="real-wait">Foto reale in arrivo</span></div>
+        <div class="eyebrow">01 — CHI SIAMO</div>
+        <h2 class="h2">Chi siamo.</h2><div class="rule"></div>
+        <p class="lead">ACT Studio si colloca stabilmente nel panorama della consulenza tributaria e societaria, operando a livello capitolino e nazionale al fianco di imprese, gruppi societari, professionisti e patrimoni complessi.</p>
+        <p class="para">Lo Studio si avvale dell'esperienza pluriennale dei propri professionisti, maturata nell'assistenza a realtà di diverse dimensioni e settori, offrendo un supporto qualificato nella gestione degli adempimenti fiscali, societari e strategici. L'attività è svolta secondo criteri di elevata specializzazione, rigore metodologico e costante aggiornamento normativo, con un approccio orientato alla prevenzione del rischio, all'efficienza organizzativa e alla creazione di valore per il cliente.</p>
+        <p class="para">L'attenzione alle esigenze specifiche di ciascun assistito, unita a competenza tecnica, affidabilità e tempestività, consente allo Studio di instaurare rapporti professionali fondati sulla fiducia e sulla continuità, accompagnando i clienti nelle decisioni ordinarie e straordinarie con soluzioni personalizzate e un'assistenza costante.</p>
+        <div class="mini-idx glassl">
+          <a class="mi" href="#filosofia"><span class="n">02</span><span class="t">La nostra filosofia</span><span class="go">→</span></a>
+          <a class="mi" href="#skills"><span class="n">03</span><span class="t">Skills — Aree di attività</span><span class="go">→</span></a>
+          <a class="mi" href="#team"><span class="n">04</span><span class="t">Il nostro team</span><span class="go">→</span></a>
+          <a class="mi" href="#pubblicazioni"><span class="n">05</span><span class="t">Pubblicazioni</span><span class="go">→</span></a>
+          <a class="mi" href="#contatti"><span class="n">06</span><span class="t">Contatti</span><span class="go">→</span></a>
+        </div>
+      </div>
+    </section>
+<section class="sec photohero" id="filosofia" style="background-image:linear-gradient(180deg,rgba(1,28,42,.55),rgba(2,67,97,.78)),url('assets/img/img-04-9e8b2a22.png')">
+      <div class="wrap">
+        <div class="eyebrow light">02 — LA NOSTRA FILOSOFIA</div>
+        <h2 class="h2 onwhite">Sei principi, un solo standard.</h2><div class="rule light"></div>
+        <p class="lead onwhite">Il nostro modo di intendere la professione: rigore, prevenzione e visione di lungo periodo applicati a ogni mandato.</p>
+      </div>
+    </section>
+<section class="sec light">
+      <div class="wrap">
+        <div class="phil">
+    <div class="phil-row"><div class="phil-ph"><img src="assets/img/img-04-9e8b2a22.png" alt=""></div><div><h3>Visione</h3><p>Interpretiamo la consulenza fiscale e societaria come leva strategica per accompagnare le imprese nelle scelte di crescita e sviluppo nel lungo periodo.</p></div></div>
+    <div class="phil-row"><div class="phil-ph"><img src="assets/img/img-05-2c5d00db.png" alt=""></div><div><h3>Approccio Integrato</h3><p>Operiamo con una visione multidisciplinare che integra profili fiscali, societari, finanziari e regolatori, offrendo soluzioni coerenti e strutturate.</p></div></div>
+    <div class="phil-row"><div class="phil-ph"><img src="assets/img/img-06-6bbada8b.png" alt=""></div><div><h3>Prevenzione del Rischio</h3><p>Poniamo al centro la prevenzione del rischio fiscale e organizzativo, favorendo certezza del diritto e stabilità nei rapporti con l'Amministrazione finanziaria.</p></div></div>
+    <div class="phil-row"><div class="phil-ph"><img src="assets/img/img-07-0d02d8bb.png" alt=""></div><div><h3>Trasparenza</h3><p>Costruiamo relazioni professionali basate su chiarezza, affidabilità e dialogo continuo, valorizzando la collaborazione come strumento di efficienza e tutela.</p></div></div>
+    <div class="phil-row"><div class="phil-ph"><img src="assets/img/img-08-42d3c3e7.png" alt=""></div><div><h3>Valore Sostenibile</h3><p>Supportiamo investimenti, riorganizzazioni e percorsi di innovazione e transizione energetica orientati alla solidità patrimoniale e alla sostenibilità nel tempo.</p></div></div>
+    <div class="phil-row"><div class="phil-ph"><img src="assets/img/img-09-e57d1b16.png" alt=""></div><div><h3>Continuità Aziendale</h3><p>Affianchiamo il Cliente nel rafforzamento degli assetti organizzativi e di governance, con l'obiettivo di garantire competitività, resilienza e continuità d'impresa.</p></div></div>
+        </div>
+      </div>
+    </section>
+<section class="sec photohero tall" id="skills" style="background-image:linear-gradient(180deg,rgba(1,28,42,.72),rgba(2,67,97,.82)),url('assets/img/img-05-2c5d00db.png')">
+      <div class="wrap">
+        <div class="eyebrow light">03 — SKILLS</div>
+        <h2 class="h2 onwhite">Aree di attività.</h2><div class="rule light"></div>
+        <p class="lead onwhite">ACT Studio è uno studio professionale che offre consulenza fiscale e societaria altamente qualificata, rivolta a imprese, gruppi societari, investitori e famiglie imprenditoriali. Lo Studio affianca i Clienti nella gestione ordinaria e straordinaria delle attività d'impresa, fornendo soluzioni personalizzate e un supporto continuativo fondato su competenze specialistiche e una profonda conoscenza della normativa tributaria nazionale e internazionale.</p>
+        <div class="stats">
+          <div class="st"><div class="st-n">9</div><div class="st-l">AREE PRINCIPALI</div></div>
+          <div class="st"><div class="st-n">7</div><div class="st-l">AMBITI SPECIALISTICI</div></div>
+          <div class="st"><div class="st-n big">IT · INT</div><div class="st-l">FISCALITÀ NAZIONALE E INTERNAZIONALE</div></div>
+        </div>
+      </div>
+    </section>
+<section class="sec light">
+      <div class="wrap">
+        <div class="eyebrow">03 — SKILLS · AREE PRINCIPALI</div>
+        <h2 class="h2">Dove interveniamo.</h2><div class="rule"></div>
+        <div class="grid2">
+          <div class="area glassl"><h4>Consulenza Fiscale Ordinaria</h4><p>Assistiamo i Clienti nell'assolvimento degli adempimenti fiscali ricorrenti, fornendo consulenza in materia di imposte dirette, IVA e altre imposte indirette. Lo Studio vanta una consolidata esperienza nella fiscalità dei gruppi societari, supportando le imprese nella corretta applicazione delle norme tributarie e nell'ottimizzazione dei processi fiscali.</p></div>
+          <div class="area glassl"><h4>Fiscalità d'Impresa e Operazioni Straordinarie</h4><p>Prestiamo attenzione all'assistenza nelle operazioni straordinarie e nei processi di riorganizzazione societaria, intervenendo sin dalle fasi preliminari attraverso attività di due diligence fiscale e societaria. Lo Studio supporta i Clienti nella gestione degli aspetti tributari e giuridici connessi a:</p><ul><li>acquisizioni e cessioni di partecipazioni, aziende e rami d'azienda;</li><li>fusioni, scissioni, conferimenti, trasformazioni e liquidazioni.</li></ul><p>L'attività prosegue nella pianificazione delle strutture societarie e finanziarie e nella gestione degli adempimenti successivi alle operazioni.</p></div>
+          <div class="area glassl"><h4>Fiscalità Finanziaria e Patrimoniale</h4><p>Forniamo consulenza nella pianificazione e strutturazione di patrimoni mobiliari e immobiliari di rilevante entità, curandone i profili fiscali e societari. In tale ambito rientrano le attività di consulenza in materia di gestione, protezione e passaggio generazionale dei patrimoni familiari.</p></div>
+          <div class="area glassl"><h4>Fiscalità Internazionale e Tax Planning</h4><p>Assistiamo i Clienti nelle tematiche di diritto tributario internazionale con riferimento alle imposte dirette, all'IVA e alle altre imposte indirette. Lo Studio analizza le operazioni infragruppo nel rispetto dei principi di transfer pricing, curando la predisposizione della documentazione idonea, inclusi Master File e Documentazione Nazionale, in conformità alla normativa e alla prassi applicabile.</p></div>
+          <div class="area glassl"><h4>Tax Ruling e Pareristica</h4><p>Supportiamo la clientela nella predisposizione di istanze di interpello ordinario e di interpelli finalizzati alla disapplicazione di specifiche normative antielusive. L'assistenza copre tutte le fasi del procedimento, comprese le interlocuzioni con l'Agenzia delle Entrate.</p></div>
+          <div class="area glassl"><h4>Fiscalità Immobiliare</h4><p>Forniamo consulenza su tutti i profili fiscali delle operazioni che coinvolgono portafogli immobiliari. ACT Studio affianca i Clienti nella strutturazione di operazioni di acquisto, dismissione e gestione di portafogli immobiliari commerciali, residenziali e industriali.</p></div>
+          <div class="grid2-pgbrk" aria-hidden="true"></div>
+          <div class="area glassl"><h4>Precontenzioso e Contenzioso Tributario</h4><p>ACT Studio vanta una consolidata esperienza nell'assistenza e nella rappresentanza dei Clienti nel contenzioso tributario innanzi alle Corti di Giustizia Tributaria. Lo Studio opera inoltre nella fase precontenziosa, fornendo supporto nei rapporti con l'Amministrazione finanziaria, nella predisposizione di istanze in autotutela, accertamenti con adesione e accordi stragiudiziali, nonché nell'accesso ai benefici previsti dal regime del Patent Box.</p></div>
+          <div class="area glassl"><h4>Consulenza Societaria</h4><p>Forniamo assistenza in ambito contrattuale e societario, occupandoci della predisposizione e revisione di patti di sindacato, statuti e atti costitutivi. Lo Studio offre inoltre consulenza nelle operazioni di ristrutturazione aziendale, nella gestione della crisi d'impresa e nei processi di risanamento e riorganizzazione del business.</p></div>
+          <div class="area glassl"><h4>Fiscalità dell'Energia</h4><p>Offriamo consulenza specialistica in materia di fiscalità dell'energia, con riferimento ai settori dell'energia elettrica, del gas, del petrolio e delle fonti energetiche rinnovabili, curando tutti i relativi profili tributari e regolatori.</p></div>
+        </div>
+        <div class="ar-close">Grazie a un approccio integrato e orientato alle esigenze del Cliente, ACT Studio si propone come partner di riferimento per la gestione fiscale e societaria delle imprese in contesti complessi e in continua evoluzione.</div>
+      </div>
+    </section>
+<section class="sec deep">
+      <div class="wrap">
+        <div class="eyebrow light">03 — SKILLS · NORMATIVA AVANZATA</div>
+        <h2 class="h2 onwhite">Sempre aggiornati, per scelta.</h2><div class="rule light"></div>
+        <p class="lead onwhite narrow">Affianchiamo imprese e gruppi societari nell'analisi e nell'applicazione delle più recenti discipline fiscali, regolatorie e di compliance, offrendo supporto qualificato nell'interpretazione normativa e nella gestione degli adempimenti connessi a misure agevolative e strumenti di cooperazione con l'Amministrazione finanziaria.</p>
+        <div class="nm-grid"><div class="nm"><div class="nm-h"><span class="nm-t">Conto Termico 3.0</span> <span class="nm-ref">D.M. 7 agosto 2025</span></div><p class="nm-d">Consulenza sulla nuova disciplina, con supporto a clienti pubblici e privati nell'accesso agli incentivi per efficientamento energetico e produzione di energia termica da fonti rinnovabili: inquadramento normativo, valutazione della spettanza e gestione dei profili fiscali e procedurali.</p></div><div class="nm"><div class="nm-h"><span class="nm-t">IRES Premiale</span> <span class="nm-ref">L. Bilancio 2025 · D.M. 8 ago 2025</span></div><p class="nm-d">Assistenza nell'applicazione della disciplina transitoria per il 2025: verifica dei requisiti per la riduzione dell'aliquota IRES — patrimonializzazione, investimenti qualificati, incremento occupazionale — e pianificazione coerente con la riforma tributaria.</p></div><div class="nm"><div class="nm-h"><span class="nm-t">Tax Control Framework</span> <span class="nm-ref">D.Lgs. 128/2015</span></div><p class="nm-d">Implementazione e rafforzamento del TCF per l'accesso al regime di adempimento collaborativo: progettazione dei presidi di controllo del rischio fiscale, rapporti con l'Agenzia delle Entrate e procedure di adesione e interlocuzione preventiva.</p></div><div class="nm"><div class="nm-h"><span class="nm-t">Concordato Preventivo Biennale</span> <span class="nm-ref">D.Lgs. 13/2024</span></div><p class="nm-d">Consulenza sul nuovo istituto: assistenza ai soggetti di minori dimensioni nella valutazione dell'adesione e nella gestione del rapporto collaborativo con l'Amministrazione finanziaria per i periodi d'imposta 2024–2025.</p></div><div class="nm"><div class="nm-h"><span class="nm-t">Transizione 5.0</span> <span class="nm-ref">Credito d'imposta</span></div><p class="nm-d">Supporto nell'accesso al credito d'imposta del Piano Transizione 5.0: inquadramento degli investimenti agevolabili, verifica dei requisiti di riduzione dei consumi energetici e gestione degli adempimenti attuativi.</p></div><div class="nm"><div class="nm-h"><span class="nm-t">Adeguati Assetti e Codice della Crisi</span> <span class="nm-ref">art. 2086 c.c.</span></div><p class="nm-d">Adeguamento degli assetti organizzativi, amministrativi e contabili e implementazione di sistemi idonei alla rilevazione tempestiva della crisi e alla salvaguardia della continuità aziendale.</p></div><div class="nm"><div class="nm-h"><span class="nm-t">Modelli 231 e Whistleblowing</span> <span class="nm-ref">D.Lgs. 231/2001</span></div><p class="nm-d">Predisposizione, aggiornamento e integrazione dei Modelli di Organizzazione, Gestione e Controllo, anche alla luce del Decreto Whistleblowing: valutazione dei rischi e adeguamento dei presidi di controllo.</p></div></div>
+      </div>
+    </section>
+<section class="sec light team" id="team">
+            <div class="wrap">
+        <div class="eyebrow">04 — IL NOSTRO TEAM</div>
+        <h2 class="h2">I professionisti dello Studio.</h2><div class="rule"></div>
+        <div class="grp"><div class="glabel">PARTNERS</div><div class="grid">
+          <div class="m glassl"><div class="av">MT</div><div class="mb">
+      <div class="mn">Dott. Marco Triolo</div><div class="mr">Partner</div><p class="mbio">Dottore commercialista e revisore legale. Diritto tributario e societario, contenzioso, fiscalità internazionale e d'impresa, riorganizzazioni di gruppi, operazioni straordinarie e due diligence.</p><span class="mailrow"><a class="mail" href="mailto:mtriolo@actstudio.it">mtriolo@actstudio.it</a><a class="ico" href="mailto:mtriolo@actstudio.it" aria-label="Scrivi una mail"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a><button class="ico copybtn" data-mail="mtriolo@actstudio.it" aria-label="Copia indirizzo"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="1.6"/><path d="M6.5 15H5.2A1.7 1.7 0 0 1 3.5 13.3V5.2A1.7 1.7 0 0 1 5.2 3.5h8.1A1.7 1.7 0 0 1 15 5.2v1.3"/></svg></button></span></div></div>
+          <div class="m glassl"><div class="av">VC</div><div class="mb">
+      <div class="mn">Dott. Vincenzo Castellano</div><div class="mr">Partner</div><p class="mbio">Dottore commercialista e revisore legale. Diritto tributario e marchi d'impresa, consulenza fiscale anche internazionale, fiscalità delle operazioni straordinarie, due diligence, IVA e imposte indirette.</p><span class="mailrow"><a class="mail" href="mailto:vcastellano@actstudio.it">vcastellano@actstudio.it</a><a class="ico" href="mailto:vcastellano@actstudio.it" aria-label="Scrivi una mail"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a><button class="ico copybtn" data-mail="vcastellano@actstudio.it" aria-label="Copia indirizzo"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="1.6"/><path d="M6.5 15H5.2A1.7 1.7 0 0 1 3.5 13.3V5.2A1.7 1.7 0 0 1 5.2 3.5h8.1A1.7 1.7 0 0 1 15 5.2v1.3"/></svg></button></span></div></div>
+        </div></div>
+        <div class="grp"><div class="glabel">PROFESSIONAL &amp; LEGAL ASSISTANTS</div><div class="grid">
+          <div class="m glassl"><div class="av">FC</div><div class="mb">
+      <div class="mn">Dott. Francesco Cosentino</div><div class="mr">Professional Assistant</div><p class="mbio">Dottore in economia aziendale (Sapienza, General Management e Sostenibilità). Imposte dirette e indirette, revisione legale, pianificazione societaria e contenzioso tributario.</p><span class="mailrow"><a class="mail" href="mailto:fcosentino@actstudio.it">fcosentino@actstudio.it</a><a class="ico" href="mailto:fcosentino@actstudio.it" aria-label="Scrivi una mail"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a><button class="ico copybtn" data-mail="fcosentino@actstudio.it" aria-label="Copia indirizzo"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="1.6"/><path d="M6.5 15H5.2A1.7 1.7 0 0 1 3.5 13.3V5.2A1.7 1.7 0 0 1 5.2 3.5h8.1A1.7 1.7 0 0 1 15 5.2v1.3"/></svg></button></span></div></div>
+          <div class="m glassl"><div class="av">GM</div><div class="mb">
+      <div class="mn">Dott. Gianluca Menichini</div><div class="mr">Professional Assistant</div><p class="mbio">Dottore in economia aziendale (Roma Tre, audit e valutazioni). Operazioni straordinarie, imposte locali, due diligence, fiscalità del settore edilizio e contenzioso tributario.</p><span class="mailrow"><a class="mail" href="mailto:gmenichini@actstudio.it">gmenichini@actstudio.it</a><a class="ico" href="mailto:gmenichini@actstudio.it" aria-label="Scrivi una mail"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a><button class="ico copybtn" data-mail="gmenichini@actstudio.it" aria-label="Copia indirizzo"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="1.6"/><path d="M6.5 15H5.2A1.7 1.7 0 0 1 3.5 13.3V5.2A1.7 1.7 0 0 1 5.2 3.5h8.1A1.7 1.7 0 0 1 15 5.2v1.3"/></svg></button></span></div></div>
+          <!-- PROFILO TEOFILI INTEGRALE (testo cliente, per la scheda del sito WordPress — sul CP va la versione corta):
+      Dottore Commercialista, Esperto Contabile e Revisore Legale con oltre 40 anni di comprovata esperienza nella consulenza fiscale, societaria, tributaria e del lavoro. Offre un supporto strategico e operativo a società e aziende operanti in molteplici settori (industria, commercio, spettacolo, no-profit e comparto finanziario).
+      Principali Aree di Competenza:
+      · Consulenza Fiscale e Societaria: gestione completa degli adempimenti ordinari, contabilità, redazione di bilanci CEE e pianificazione fiscale.
+      · Operazioni Straordinarie: assistenza specialistica in materia di cessioni, trasformazioni, liquidazioni e fusioni aziendali.
+      · Consulenza del Lavoro: gestione dell'amministrazione del personale (elaborazione cedolini paga) e relativi adempimenti ordinari e straordinari.
+      · Gestione del Contenzioso: assistenza e patrocinio nel contenzioso tributario presso le commissioni competenti e nel contenzioso del lavoro presso la DPL e gli enti assistenziali.
+      · Consulenza Tecnica: supporto specialistico a studi legali in materia di diritto societario, del lavoro e fallimentare.
+      -->
+          <div class="m glassl"><div class="av">PT</div><div class="mb">
+      <div class="mn">Dott.ssa Patrizia Teofili</div><div class="mr">Professional Assistant</div><p class="mbio">Dottore Commercialista, Esperto Contabile e Revisore Legale, oltre 40 anni di esperienza in consulenza fiscale, societaria e del lavoro, operazioni straordinarie e contenzioso tributario in molteplici settori.</p><span class="mailrow"><a class="mail" href="mailto:pteofili@actstudio.it">pteofili@actstudio.it</a><a class="ico" href="mailto:pteofili@actstudio.it" aria-label="Scrivi una mail"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a><button class="ico copybtn" data-mail="pteofili@actstudio.it" aria-label="Copia indirizzo"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="1.6"/><path d="M6.5 15H5.2A1.7 1.7 0 0 1 3.5 13.3V5.2A1.7 1.7 0 0 1 5.2 3.5h8.1A1.7 1.7 0 0 1 15 5.2v1.3"/></svg></button></span></div></div>
+        </div></div>
+        <div class="grp"><div class="glabel">LEGAL ASSISTANTS</div><div class="grid">
+          <div class="m glassl"><div class="av">ML</div><div class="mb">
+      <div class="mn">Dott.ssa Michela Lunadei</div><div class="mr">Accountant &amp; Assistant</div><p class="mbio">Organizzazione dei servizi amministrativi, contabili e finanziari; supervisione del bilancio d'impresa, conservazione registri, analisi costi e adempimenti fiscali-tributari.</p><span class="mailrow"><a class="mail" href="mailto:mlunadei@actstudio.it">mlunadei@actstudio.it</a><a class="ico" href="mailto:mlunadei@actstudio.it" aria-label="Scrivi una mail"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a><button class="ico copybtn" data-mail="mlunadei@actstudio.it" aria-label="Copia indirizzo"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="1.6"/><path d="M6.5 15H5.2A1.7 1.7 0 0 1 3.5 13.3V5.2A1.7 1.7 0 0 1 5.2 3.5h8.1A1.7 1.7 0 0 1 15 5.2v1.3"/></svg></button></span></div></div>
+          <div class="m glassl"><div class="av">MM</div><div class="mb">
+      <div class="mn">Dott.ssa Maila Marchegiani</div><div class="mr">Front Office &amp; Communication</div><p class="mbio">Pianificazione dell'agenda e organizzazione dello Studio, profilazione della clientela, presidi antiriciclaggio e privacy, adempimenti telematici, cura della comunicazione e delle pubblicazioni.</p><span class="mailrow"><a class="mail" href="mailto:mmarchegiani@actstudio.it">mmarchegiani@actstudio.it</a><a class="ico" href="mailto:mmarchegiani@actstudio.it" aria-label="Scrivi una mail"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a><button class="ico copybtn" data-mail="mmarchegiani@actstudio.it" aria-label="Copia indirizzo"><svg viewBox="0 0 24 24" fill="none" stroke="#024361" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="1.6"/><path d="M6.5 15H5.2A1.7 1.7 0 0 1 3.5 13.3V5.2A1.7 1.7 0 0 1 5.2 3.5h8.1A1.7 1.7 0 0 1 15 5.2v1.3"/></svg></button></span></div></div>
+        </div></div>
+      </div>
+    </section>
+<section class="sec light" id="pubblicazioni">
+      <div class="wrap">
+        <div class="eyebrow">05 — PUBBLICAZIONI</div>
+        <h2 class="h2">Le nostre firme.</h2><div class="rule"></div>
+        <p class="lead">Contributi e approfondimenti dei professionisti dello Studio pubblicati su Il Sole 24 Ore.</p>
+        <div class="pb-list"><div class="pb"><span class="pb-d">Gennaio 2021</span><span class="pb-t">Art Bonus</span><span class="pb-s">IL SOLE 24 ORE</span></div><div class="pb"><span class="pb-d">Agosto 2022</span><span class="pb-t">Superbonus, opere di completamento</span><span class="pb-s">IL SOLE 24 ORE</span></div><div class="pb"><span class="pb-d">Gennaio 2024</span><span class="pb-t">No stop all'Ecobonus</span><span class="pb-s">IL SOLE 24 ORE</span></div><div class="pb"><span class="pb-d">Luglio 2024</span><span class="pb-t">Acquisto immobili a imposte fisse (anche in base allo statuto)</span><span class="pb-s">IL SOLE 24 ORE</span></div><div class="pb"><span class="pb-d">Agosto 2024</span><span class="pb-t">Sconto in fattura e divieto di cessione: spiraglio per le CILAS dormienti</span><span class="pb-s">IL SOLE 24 ORE</span></div></div>
+      </div>
+    </section>
+<section class="sec light" id="contatti">
+      <div class="wrap">
+        <div class="eyebrow">06 — CONTATTI</div>
+        <h2 class="h2">Dove siamo.</h2><div class="rule"></div>
+        <div class="cc-grid">
+          <div class="cc"><div class="cc-l">SEDE</div><div class="cc-line">Via Ticino 14</div><div class="cc-line">00198 Roma</div><a class="cc-link" href="https://maps.google.com/?q=Via+Ticino+14,+00198+Roma">Apri in Google Maps →</a></div>
+          <div class="cc"><div class="cc-l">TELEFONO</div><div class="cc-line"><a href="tel:+39068845100">+39 06 8845100</a></div><div class="cc-line"><a href="tel:+39068555080">+39 06 8555080</a></div></div>
+          <div class="cc"><div class="cc-l">EMAIL</div><div class="cc-line"><a href="mailto:info@actstudio.it">info@actstudio.it</a></div><a class="cc-link" href="https://actstudio.it">Vai al sito →</a></div>
+          <div class="cc"><div class="cc-l">P.IVA</div><div class="cc-line">15910091006</div></div>
+        </div>
+      </div>
+      <a class="map" href="https://maps.google.com/?q=Via+Ticino+14,+00198+Roma" target="_blank" rel="noopener" style="background-image:url('assets/img/img-10-9be4a873.png')">
+        <span class="map-pin" aria-hidden="true"><span class="map-pin-pulse"></span><svg viewBox="0 0 24 24" fill="#024361" stroke="#fff" stroke-width="1.4"><path d="M12 22c4.4-4.6 6.6-8 6.6-11A6.6 6.6 0 0 0 5.4 11c0 3 2.2 6.4 6.6 11z"/><circle cx="12" cy="10.6" r="2.4" fill="#fff" stroke="none"/></svg></span>
+        <div class="map-tag"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4.2-4.3 6.3-7.6 6.3-10.5A6.3 6.3 0 0 0 5.7 10.5C5.7 13.4 7.8 16.7 12 21z"/><circle cx="12" cy="10.4" r="2.3"/></svg><span>Via Ticino 14, Roma — apri nella mappa</span></div>
+      </a>
+    </section>
+<section class="sec back">
+      <div class="bk-center">
+        <img class="bk-logo" src="assets/img/img-03-f7121be0.png" alt="ACT Studio"/>
+        <div class="bk-rule"></div>
+        <div class="bk-tag">STUDIO TRIBUTARIO SOCIETARIO</div>
+      </div>
+      <div class="bk-foot">ACT Studio STP S.r.l.<br>Via Ticino 14, 00198 Roma<br>info@actstudio.it · +39 06 8845100<br><a href="https://actstudio.it">actstudio.it</a></div>
+    </section>
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span>copiata</span></div>
+<script>
+document.querySelectorAll('.copybtn').forEach(b=>{
+  b.addEventListener('click',async()=>{
+    const mail=b.dataset.mail;
+    try{await navigator.clipboard.writeText(mail);}
+    catch(e){const t=document.createElement('textarea');t.value=mail;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}
+    b.classList.add('copied');
+    const to=document.getElementById('toast');
+    to.querySelector('span').textContent=mail+' copiata';
+    to.classList.add('show');
+    setTimeout(()=>{b.classList.remove('copied');to.classList.remove('show');},1600);
+  });
+});
+</script>
+</body></html>
